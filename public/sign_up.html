@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<title>Sign Up</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+<body>
+
+
+
+
+         <!-- Sidebar -->
+<nav class="w3-sidebar w3-black w3-animate-top w3-xlarge" style="display:none;padding-top:140px" id="mySidebar">
+  
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-white w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+    <i class="fa fa-remove"></i></a>
+
+  <div class="w3-bar-block w3-center">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-xxlarge w3-button w3-text-white w3-hover-black">Close</a><br>
+    <a href="#" class="w3-bar-item w3-xlarge w3-button w3-text-white w3-hover-black"><a href="index.html">Home</a></a><br>
+    <a href="#" class="w3-bar-item w3-button w3-text-white w3-hover-black"><a href="Lottery Odds.html">Draft Lottery</a></a><br>
+    <a href="#" class="w3-bar-item w3-button w3-text-white w3-hover-black"><a href="playoff_bracket.html">Playoff Bracket</a></a><br>
+    <a href="#" class="w3-bar-item w3-button w3-text-white w3-hover-black"><a href="bet_page.html">Submit a Bet</a></a><br>
+     <a href="#" class="w3-bar-item w3-button w3-text-white w3-hover-black"><a href="sign_up.html">Sign Up</a></a><br>
+  </div>
+</nav>
+<span class="w3-left w3-padding"><h1>Sign Up<a href="javascript:void(0)" class="w3-right w3-button w3-hover-midnightblue" onclick="w3_open()">☰
+  </a>
+  </h1>
+  </span>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+   <div ng-app="myApp">
+
+<div ng-controller="r_controller">
+  
+</div>
+ 
+    <div ng-controller="c_controller">
+    <form class="form-group">
+    <br><br><br><br>
+    <h2 class="w3-wide">User Information</h2><hr>
+   Name: <input type="text" size="45" class="form-control" ng-model="user_name" required><br>
+  
+   email: <input type="text" size="30" class="form-control" nng-model="email" required><br>
+ <hr>
+ 
+    <h2 class="w3-wide">Payment Information</h2><hr>
+    Credit Card Number: <input type="number" size="16" class="form-controll" ng-model="credit_card" required><br><br>
+    
+    <button type="submit" class="btn btn-default" ng-click="save()" required>Sign Up!</button>
+</form>
+<p>user_name:{{user_name}} <br>email:{{email}}<br>credit_card:{{credit_card}}<br> return results:{{results}}</p>
+</div>
+</div>
+
+
+
+  <!-- The Tour Section -->
+  
+        
+
+ 
+
+  
+
+
+  
+<!-- End Page Content -->
+</div>
+
+
+
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<script>function w3_open() {
+    document.getElementById("mySidebar").style.width = "100%";
+    document.getElementById("mySidebar").style.display = "block";
+}
+</script>
+<script>
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+    </script>
+<script>
+var app = angular.module('myapp', []);
+app.controller('r_controller', function($scope, $http) {
+   $http.get("mysql/enduser")
+   .then(function (response) {
+      $scope.enduser = response.data;
+      // console.log(response.data);
+  });
+});
+
+app.controller('c_controller', function($scope, $http) {
+  $scope.save = function () {
+    $http.post("mysql/enduser", {"user_id": $scope.user_id, "user_name": $scope.user_name, "email": $scope.email, "credit_card": $scope.credit_card})
+    .then(function (response) {
+        // $scope.added = response.data;
+        console.log(response.data);
+    });
+  }    
+});
+</script>
+
+</body>
+</html>
