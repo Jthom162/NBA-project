@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<!--
+	Multiverse by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title> Submit a Bet</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		 <!-- Sidebar -->
+<nav class="w3-sidebar w3-black w3-animate-top w3-xlarge" style="display:none;padding-top:140px" id="mySidebar">
+  
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-white w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+    <i class="fa fa-remove"></i></a>
+
+ <div class="w3-bar-block w3-center">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-xxlarge w3-button w3-text-white w3-hover-black">Close</a><br>
+    <a href="#" class="w3-bar-item w3-xlarge w3-button w3-text-white w3-hover-black"><a href="index.html">Home</a></a><br>
+    <a href="#" class="w3-bar-item w3-button w3-text-white w3-hover-black"><a href="Lottery Odds.html">Draft Lottery</a></a><br>
+    <a href="#" class="w3-bar-item w3-button w3-text-white w3-hover-black"><a href="playoff_bracket.html">Playoff Bracket</a></a><br>
+    <a href="#" class="w3-bar-item w3-button w3-text-white w3-hover-black"><a href="bet_page.html">Submit a Bet</a></a><br>
+     <a href="#" class="w3-bar-item w3-button w3-text-white w3-hover-black"><a href="sign_up.html">Sign Up</a></a><br>
+  </div>
+</nav>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header class="w3-container w3-top w3-black w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding"><h1>Submit a Bet<a href="javascript:void(0)" class="w3-right w3-button w3-hover-midnightblue" onclick="w3_open()">☰
+  </a>
+  </h1>
+  </span>
+
+</header>
+</div>
+<div class="w3-container w3-content w3-center w3-padding-64" id="band">
+<div class="w3-container w3-content w3-center w3-padding-64" style="float:left" id="band">
+    
+
+    <iframe src="Team Rankings.htm" width="100%" height="700" align="left"></iframe>
+  </div>
+  <div class="w3-container w3-content w3-center w3-padding-64" style="float:right" id="band">
+<p>Look Up a Player:
+  	<form>
+  		<select name="player_lookup">
+  			<option value=""></option>
+  			<option value="curry">Stephen Curry</option>
+  			<option value="durant">Kevin Durant</option>
+  			<option value="harden">James Harden</option>
+  			<option value="james">LeBron James</option>
+  			<option value="irving">Kyrie Irving</option>
+  			<option value="conley">Mike Conley</option>
+  			<option value="embiid">Joel Embiid</option>
+  			<option value="wall">John Wall</option>
+  			<option value="davis">Anthony Davis</option>
+  			<option value="westbrook">Russell Westbrook</option>
+  			<option value="george">Paul George</option>
+  			<option value="griffin">Blake Griffin</option>
+  			<option value="paul">Chris Paul</option>
+  			<option value="derozan">DeMar Derozan</option>
+  			<option value="antetokounmpo">Giannis Antetokounmpo</option>
+  			<option value="lillard">Damian Lillard</option>
+  			<option value="towns">Karl Anthony Towns</option>
+  			<option value="butler">Jimmy Butler</option>
+  			<option value="thompson">Klay Thompson</option>
+  			<option value="walker">Kemba Walker</option>
+  		</select>
+  	</form>
+ </p>
+  </div>
+</div>
+ 
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<header>
+	</header>
+	<div>
+		<h2>Make Your Bet</h2><hr />
+		<form>
+<p>
+Member ID:<br>
+<input type="number" size="10" name="member_id">
+</p>
+
+<hr />
+<p>
+Other Member ID (who you're betting):<br>
+<input type="number" size="10" name="member_id_2">
+</p>
+<hr />
+Choose Bet Type:
+<select id="slct1" name="slct1" onchange="populate(this.id,'slct2');populate2(this.id,'slct3')">
+  <option value=""></option>
+  <option value="Team">Team</option>
+  <option value="Player">Player</option>
+
+</select>
+<hr />
+Choose Bet Subject:
+<select id="slct2" name="slct2"></select>
+<hr />
+
+Choose Outcome:
+<select id="slct3" name="slct3"></select>
+<hr />
+Select Amount (dollar amount):
+<input type="number" size="6" name="bet amount">
+
+
+
+
+<p>
+<input type="submit" name="submit" value="Submit">
+</form>
+
+</p>
+
+</div>
+</header>
+
+</header>
+<br><br><br><br><br><br><br>
+				<!-- Main -->
+					
+
+				
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script>function w3_open() {
+    document.getElementById("mySidebar").style.width = "100%";
+    document.getElementById("mySidebar").style.display = "block";
+}
+</script>
+<script>
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+	</script>
+<script>
+function populate(s1,s2){
+	var s1 = document.getElementById(s1);
+	var s2 = document.getElementById(s2);
+	s2.innerHTML = "";
+	if(s1.value == "Team"){
+		var optionArray = ["|","hawks|Atlanta Hawks","celtics|Boston Celtics","nets|Brooklyn Nets","hornets|Charlotte Horents","bulls|Chicago Bulls","cavaliers|Cleveland Cavaliers","mavericks|Dallas Mavericks","nuggets|Denver Nuggets","pistons|Detroit Pistons","warriors|Golden State Warriors","rockets|Houston Rockets","pacers|Indiana Pacers","clippers|Los Angeles Clippers","lakers|Los Angeles Lakers","grizzlies|Memphis Grizzlies","heat|Miami Heat","bucks|Milwaukee Bucks","timberwolves|Minnesota Timberwolves","pelicans|New Orleans Pelicans","knicks|New York Knicks","thunder|Oklahoma City Thunder","magic|Orlando Magic","76ers|Philadelphia 76ers","suns|Phoenix Suns","trailblazers|Portland Trailblazers","kings|Sacramento Kings","spurs|San Antonio Spurs","raptors|Toronto Raptors","jazz|Utah Jazz","wizards|Washington Wizards"];
+	} else if(s1.value == "Player"){
+		var optionArray = ["|","curry|Stephen Curry","durant|Kevin Durant","harden|James Harden","james|LeBron James","irving|Kyrie Irving","conley|Mike Conley","embiid|Joel Embiid","wall|John Wall","davis|Anthony Davis","westbrook|Russel Westbrook","george|Paul George","griffin|Blake Griffin","paul|Chris Paul","derozan|DeMar Derozan","antetokounmpo|Giannis Antetokounmpo","lillard|Damian Lillard","towns|Karl Anthony Towns","butler|Jimmy Butler","thompson|Klay Thompson","walker|Kemba Walker"];
+	}
+for(var option in optionArray){
+		var pair = optionArray[option].split("|");
+		var newOption = document.createElement("option");
+		newOption.value = pair[0];
+		newOption.innerHTML = pair[1];
+		s2.options.add(newOption);
+	}
+}
+</script>
+<script>
+function populate2(s1,s2){
+	var s1 = document.getElementById(s1);
+	var s2 = document.getElementById(s2);
+	s2.innerHTML = "";
+	if(s1.value == "Team"){
+		var optionArray = ["|","win|Win","lose|Lose"];
+	} else if(s1.value == "Player"){
+		var optionArray = ["|","less_20|Score Less Than 20 Points","more_25|Score More That 25 Points","more_30|Score More Than 30 Points","more_35|Score More Than 35 Points","more_40|Score More Than 40 Points"];
+	}
+	for(var option in optionArray){
+		var pair = optionArray[option].split("|");
+		var newOption = document.createElement("option");
+		newOption.value = pair[0];
+		newOption.innerHTML = pair[1];
+		s2.options.add(newOption);
+	}
+}
+</script>
+
+	</body>
+</html>
